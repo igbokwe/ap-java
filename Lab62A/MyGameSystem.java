@@ -1,24 +1,29 @@
-public class MyGameSystem extends MyDevice
+public class MyGameSystem
    {
-
+   private double price;
+   private int memory;
+   private boolean isInStock;
    private int  numberOfGames;
    
    public MyGameSystem()
       {
-   super();
+  price = 0.0;
+      memory = 0;
+      isInStock = false;
        numberOfGames =0;
       } // end zero argument constructor
       
    public MyGameSystem( double initialPrice, int initialMemory, boolean initialIsInStock, int initialNumberOfGames)
       {
-      super(  initialPrice, initialMemory, 
-                initialIsInStock );
+    price = initialPrice;
+      memory = initialMemory;
+      isInStock = initialIsInStock;
        numberOfGames= initialNumberOfGames;
        
       } // end four argument constructo
-   public String shipItem( boolean Stock)
+        public String shipItem()
       {
-      if( Stock == true )
+      if( isInStock == true )
          {
          return "Your item has been shipped."; 
         } // end if
@@ -27,11 +32,14 @@ public class MyGameSystem extends MyDevice
          return "Your item is currently out of stock, it will ship when it is back in stock";   
          } // end else
       } // end method shipItem
+
    public String  toString() {
       {
        
-System.out.println("MyGameSystem statistics");
-       return super.toString()+ "\n" + "NumberOfGames:"+ numberOfGames;
+           return "MyGameSystem statistics:" + "\n" +
+             "Price: $" + price + "\t" +
+             "Memory: " + memory + "\t" +
+             "In Stock: " + isInStock + "\t" +  "NumberOfGames:"+ numberOfGames;
       } // end method toString()
       
    } 
