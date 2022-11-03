@@ -1,1 +1,1 @@
-Alozie High School Java Assignments
+Alozie AP Java Assignments
